@@ -22,6 +22,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'Yggdroot/indentLine'
+Plugin 'iCyMind/NeoSolarized'
+"Plugin 'ryanoasis/vim-devicons'
+Plugin 'mhartington/oceanic-next'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
@@ -57,9 +60,17 @@ filetype plugin indent on    " required
 
 syntax enable
 set nu
-"set t_Co=256
-"colorscheme molokai 
+set t_Co=256
+"colorscheme molokai
 
+colorscheme NeoSolarized
+set background=dark
+
+
+"let g:oceanic_next_terminal_bold = 1
+"let g:oceanic_next_terminal_italic = 1
+"let g:airline_theme='oceanicnext'
+"colorscheme OceanicNext
 
 
 map <F2> :NERDTreeToggle<CR>
@@ -75,7 +86,6 @@ set fileencodings=utf-8,gbk,gb18030,gk2312
 set nu                                    "显示行号
 filetype on                              "检测文件的类型     
 set history=1000                  "记录历史的行数
-set background=dark          "背景使用黑色
 syntax on                                "语法高亮度显示
 set autoindent                       "vim使用自动对齐，也就是把当前行的对齐格式应用到下一行(自动缩进）
 set cindent                             "（cindent是特别针对 C语言语法自动缩进）
@@ -90,9 +100,12 @@ set ruler                                  "在编辑过程中，在右下角显
 set nohls                                "默认情况下，寻找匹配是高亮度显示，该设置关闭高亮显示     
 set incsearch                        "在程序中查询一单词，自动匹配单词的位置；如查询desk单词，当输到/d时，会自动找到第一个d开头的单词，当输入到/de时，会自动找到第一个以ds开头的单词，以此类推，进行查找；当找到要匹配的单词时，别忘记回车 
 set backspace=2           " 设置退格键可用
+set autoindent
 
 let mapleader=" "  
 let g:NERDSpaceDelims=1
 
 autocmd BufWritePost $MYVIMRC source $MYVIMRC   " 让配置变更立即生效  
 
+set timeout timeoutlen=3000 ttimeoutlen=100  "大写O会卡一下
+set guifont=PowerlineSymbols
